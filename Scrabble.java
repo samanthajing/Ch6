@@ -1,9 +1,8 @@
 public class Scrabble {
     public static boolean canSpell(String tile, String s) {
-        for (int i = 0; i < tile.length(); i++) {
-            if (lc(tile, tile.charAt(i)) < lc(tile, s.charAt(i))) {
+        for (int i = 0; i < s.length(); i++) {
+            if (lc(tile, s.charAt(i)) < lc(s, s.charAt(i)))
                 return false;
-            } 
         }
         return true;
     }
@@ -16,6 +15,7 @@ public class Scrabble {
         return sum;
     }
     public static void main(String[] args) {
-        System.out.println(canSpell("quijio", "jib"));
+        System.out.println(canSpell("iib", "jib"));
     }
 }
+
